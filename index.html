@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Clinical – Clínica Odontológica</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+          rel="stylesheet">
+    <style>
+        :root{
+            --primary:#0a6cff;
+            --primary-dark:#0049b3;
+            --bg:#f9fafd;
+            --text:#333;
+            --white:#fff;
+            --radius:8px;
+        }
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        body{
+            font-family:'Montserrat',sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            line-height:1.6;
+        }
+        a{color:inherit;text-decoration:none}
+        img{max-width:100%;display:block}
+        /* ---------- HEADER ---------- */
+        header{
+            background:var(--primary);
+            color:var(--white);
+            padding:1rem 2rem;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            flex-wrap:wrap;
+        }
+        .header-left{
+            display:flex;
+            flex-direction:column;
+        }
+        .logo{
+            font-size:1.8rem;
+            font-weight:700;
+            display:flex;
+            align-items:center;
+            gap:0.8rem;
+        }
+        .logo img{
+            display:none;               /* escondido aqui, a logo real está à direita */
+        }
+        .logo-img{
+            height:80px;                /* tamanho maior solicitado */
+            width:auto;
+        }
+        nav{
+            margin-top:.5rem;
+        }
+        nav a{
+            margin-right:1.5rem;
+            font-weight:600;
+            color:var(--white);
+            transition:opacity .3s;
+        }
+        nav a:hover{opacity:.8}
+        /* ---------- HERO ---------- */
+        .hero{
+            position:relative;
+            background:url('https://source.unsplash.com/1600x900/?dental,clinic') center/cover no-repeat;
+            height:20vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            color:#fff;
+        }
+        .hero::after{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:rgba(0,0,0,.4);
+        }
+        .hero h1{position:relative;font-size:2.5rem;max-width:800px}
+        /* ---------- SECTIONS ---------- */
+        .section{
+            padding:4rem 2rem;
+            max-width:1200px;
+            margin:auto;
+        }
+        .section h2{
+            font-size:2rem;
+            margin-bottom:1.5rem;
+            color:var(--primary-dark);
+            text-align:center;
+        }
+        .grid{display:grid;gap:2rem}
+        .grid-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+        .card{
+            background:var(--white);
+            border-radius:var(--radius);
+            box-shadow:0 2px 8px rgba(0,0,0,.1);
+            overflow:hidden;
+            transition:transform .3s;
+            margin-bottom:1.5rem;
+        }
+        .card:hover{transform:translateY(-5px)}
+        .card img{height:180px;object-fit:cover}
+        .card .content{padding:1rem}
+        .card .content h3{
+            margin-bottom:.5rem;
+            font-size:1.2rem;
+            color:var(--primary-dark);
+        }
+        .cta{
+            background:var(--primary);
+            color:var(--white);
+            text-align:center;
+            padding:2rem;
+            border-radius:var(--radius);
+        }
+        .cta a{
+            display:inline-block;
+            margin-top:1rem;
+            padding:.8rem 1.5rem;
+            background:var(--white);
+            color:var(--primary);
+            border-radius:var(--radius);
+            font-weight:600;
+            transition:background .3s,color .3s;
+        }
+        .cta a:hover{
+            background:var(--primary-dark);
+            color:var(--white);
+        }
+        footer{
+            background:#222;
+            color:#ccc;
+            padding:2rem;
+            text-align:center;
+            font-size:.9rem;
+        }
+        /* ---------- FORM ---------- */
+        .form{
+            background:var(--white);
+            padding:2rem;
+            border-radius:var(--radius);
+            box-shadow:0 2px 8px rgba(0,0,0,.1);
+            max-width:600px;
+            margin:auto;
+        }
+        .form input,
+        .form textarea{
+            width:100%;
+            padding:.8rem;
+            margin-bottom:1rem;
+            border:1px solid #ddd;
+            border-radius:var(--radius);
+            font-family:inherit;
+            font-size:1rem;
+        }
+        .form button{
+            background:var(--primary);
+            color:var(--white);
+            border:none;
+            padding:.9rem 1.5rem;
+            font-size:1rem;
+            border-radius:var(--radius);
+            cursor:pointer;
+            transition:background .3s;
+        }
+        .form button:hover{background:var(--primary-dark)}
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width:768px){
+            .hero h1{font-size:2rem}
+            header{justify-content:center}
+            .header-left{align-items:center}
+            .logo-img{margin-top:1rem}
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <div class="logo">
+            My Clinical
+        </div>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#profissionais">Profissionais</a>
+            <a href="#aluguel">Aluguel de Sala</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </div>
+    <!-- LOGO à direita, maior -->
+    <img class="logo-img" src="https://premier-silver-dt9zmrehhm.edgeone.app/1000580091-removebg-preview.png" alt="Logo My Clinical">
+</header>
+
+<section class="hero">
+</section>
+
+<section id="sobre" class="section">
+    <h2>Sobre a My Clinical</h2>
+    <p style="max-width:800px;margin:auto;text-align:center;">
+        Na My Clinical oferecemos salas prontas para os dentistas que desejam focar apenas no atendimento
+        aos pacientes. Reduza custos com equipamentos e infraestrutura, tenha um ambiente confortável e
+        profissional e alavanque sua carreira.
+    </p>
+</section>
+
+<section id="servicos" class="section">
+    <h2>Serviços Odontológicos</h2>
+    <div class="grid grid-2">
+        <div class="card">
+            <img src="https://brioodontologia.com.br/wp-content/uploads/2023/05/ortodontia.jpg" alt="Ortodontia">
+            <div class="content"><h3>Ortodontia</h3><p>Correção de alinhamento dental com aparelhos fixos ou alinhadores invisíveis.</p></div>
+        </div>
+        <div class="card">
+            <img src="https://oraldents.com.br/wp-content/uploads/2022/10/clareamento-dental-a-laser-antes-e-depois.jpg" alt="Clareamento Dental">
+            <div class="content"><h3>Clareamento Dental</h3><p>Procedimentos avançados para deixar seu sorriso mais branco e radiante.</p></div>
+        </div>
+        <div class="card">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.-82U9qgsGkGVHIA1Uv4X-wHaE4?pid=Api&P=0&h=180" alt="Implantes">
+            <div class="content"><h3>Implantes Dentários</h3><p>Reposição de dentes perdidos com tecnologia de última geração.</p></div>
+        </div>
+        <div class="card">
+            <img src="https://eapgoias.com.br/wp-content/uploads/2024/05/tartaro-periodontia-1024x680.webp" alt="Periodontia">
+            <div class="content"><h3>Periodontia</h3><p>Prevenção e tratamento de doenças da gengiva e dos tecidos de suporte.</p></div>
+        </div>
+        <div class="card">
+            <img src="https://oraldents.com.br/wp-content/uploads/2024/03/endodontia-o-que-e.jpeg" alt="Endodontia">
+            <div class="content"><h3>Endodontia</h3><p>Tratamento de canal para salvar dentes comprometidos.</p></div>
+        </div>
+        <div class="card">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.e62dASpKG95W2Fgq1uBWiQHaEK?pid=Api&P=0&h=180" alt="Próteses">
+            <div class="content"><h3>Próteses Dentárias</h3><p>Coroas, pontes, dentaduras e restaurações personalizadas.</p></div>
+        </div>
+    </div>
+</section>
+
+<section id="profissionais" class="section">
+    <h2>Profissionais</h2>
+    <div class="grid grid-2">
+        <div class="card">
+            <!-- Dra. Heloísa Fernandes -->
+            <img src="https://mean-plum-ijwmzqhz1u.edgeone.app/IMG-20260509-WA0009.jpg" alt="Dra Heloísa Fernandes">
+            <div class="content">
+                <h3>Dra. Heloísa Fernandes</h3>
+                <p>Implantodontia • Periodontia • Harmonização Orofacial • Clínica Geral</p>
+                <p>Instagram: <a href="https://instagram.com/dentistahelofernandes" target="_blank">@dentistahelofernandes</a></p>
+                <p>Contato: (84) 99965‑7124</p>
+                <p>CRO-RN: 5953</p>
+            </div>
+        </div>
+
+         <!-- Dra. Izamara Gomes -->
+        <div class="card">
+            <img src="https://depressed-silver-exoqlzbvrx.edgeone.app/IMG-20260509-WA0005.jpg" alt="Dra Izamara Gomes">
+            <div class="content">
+                <h3>Dra. Izamara Gomes</h3>
+                <p>Odontopediatria • Clínica Geral • Cirurgia Oral Menor</p>
+                <p>Instagram: <a href="https://instagram.com/Dra.Izamaragomesp" target="_blank">@Dra.Izamaragomesp</a></p>
+                <p>Contato: (84) 99830‑0268</p>
+                <p>CRO-RN: 7276</p>
+            </div>
+        </div>
+        <!-- Mais cards podem ser adicionados aqui -->
+    </div>
+
+    <div class="grid grid-2">
+        <!-- Dra. Fátima Barreto -->
+        <div class="card">
+            <img src="https://dull-emerald-lyesocgvsz.edgeone.app/IMG-20260509-WA0006.jpg" alt="Dra Fátima Barreto">
+            <div class="content">
+                <h3>Dra. Fátima Barreto</h3>
+                <p>Clínica Geral</p>
+                <p>Instagram: <a href="https://www.instagram.com/drafatimabarreto?igsh=MTdxNm1ubGhwaGZkaQ==" target="_blank">@drafatimabarreto</a></p>
+                <p>Contato: (84) 99601-1344</p>
+                <p>CRO-RN: 6703</p>
+            </div>
+        </div>
+
+        <!-- Dr. Ildone Cavalcante -->
+        <div class="card">
+            <img src="https://minimal-silver-ryr3t6lhho.edgeone.app/IMG-20260509-WA0007.jpg" alt="Dr. Ildone Cavalcante">
+            <div class="content">
+                <h3>Dr. Ildone Cavalcante</h3>
+                <p>Clínica Geral • Facetas • HOF • Cirurgia Oral Menor</p>
+                <p>Instagram: <a href="https://www.instagram.com/dr.ildone.neto?igsh=YnJmMHgxOHU1MWJy" target="_blank">@dr.ildone.neto</a></p>
+                <p>Contato: (84) 99806-9606</p>
+                <p>CRO-RN: 08521</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="grid grid-2">
+    <!-- Dra. Kaline Soares -->
+        <div class="card">
+            <img src="https://intense-brown-r9po3zsjua.edgeone.app/IMG-20260509-WA0008.jpg" alt="Dra. Kaline Soares">
+            <div class="content">
+                <h3>Dra. Kaline Soares</h3>
+                <p>Harmonização Orofacial</p>
+                <p>Instagram: <a href="https://www.instagram.com/drakalinesoares?igsh=MWEycHY4OWFuNWJmNg==" target="_blank">@drakalinesoares</a></p>
+                <p>Contato: (84) 99211-4920</p>
+                <p>CRO-RN: 7538</p>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+<section id="aluguel" class="section">
+    <h2>Aluguel de Sala</h2>
+    <div class="cta">
+        <p>Vantagens:</p>
+        <ul style="list-style:none;padding:0;text-align:left;max-width:500px;margin:auto;">
+            <li>✅ Redução de custos com equipamentos e infraestrutura;</li>
+            <li>✅ Mais tempo para se concentrar no atendimento;</li>
+            <li>✅ Espaço confortável para pacientes e profissionais;</li>
+            <li>✅ Alavanque sua carreira!</li>
+        </ul>
+        <a href="#form-aluguel">Agendar Visita</a>
+    </div>
+
+    <div class="section" id="form-aluguel">
+        <h2 style="margin-top:2rem;">Solicite sua Visita</h2>
+        <form class="form" id="visitaForm">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="E‑mail" required>
+            <input type="tel" name="telefone" placeholder="Telefone" required>
+            <textarea name="mensagem" rows="4" placeholder="Mensagem (ex.: data preferida para visita)" required></textarea>
+            <button type="submit">Enviar Solicitação</button>
+        </form>
+    </div>
+</section>
+
+<section id="contato" class="section">
+    <h2>Contato</h2>
+    <div class="grid grid-2">
+        <div class="card">
+            <img src="https://premier-silver-dt9zmrehhm.edgeone.app/1000580091-removebg-preview.png" alt="Contato">
+            <div class="content">
+                <h3>Fale Conosco</h3>
+                <p>Telefone: (84) 98674‑0480</p>
+                <p>E‑mail: <a href="mailto:myclinical02@gmail.com">myclinical02@gmail.com</a></p>
+                <p>Instagram: <a href="https://www.instagram.com/myclinical_?igsh=MXJxNTBpMGJsdzAwOQ==" target="_blank">@myclinical_</a></p>
+                <p>Whatsapp: <a href="https://wa.me/5584986740480" target="_blank">whatsapp@myclinical.com</a></p>
+            </div>
+        </div>
+        <div class = "card">
+            <img src="https://static.vecteezy.com/system/resources/previews/001/265/731/original/map-with-location-pin-vector.jpg" alt="Endereço">
+            <div class="content">
+                <h3>My Clinical Odontologia & Saúde</h3>
+                <p>Endereço: Rua Engenheiro Carlos Drumaresque, 6 – Alto de São Manoel</p>
+                <p>Próximo ao Restaurante Acapulcos</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 My Clinical – Todos os direitos reservados.
+</footer>
+
+<script>
+/**
+ * Envia o formulário de solicitação de visita via "mailto".
+ * Abre o cliente de e‑mail do usuário já preenchido com
+ * destinatário, assunto e corpo da mensagem.
+ */
+document.getElementById('visitaForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // impede o envio tradicional
+
+    // coleta os valores
+    const nome = encodeURIComponent(this.nome.value.trim());
+    const email = encodeURIComponent(this.email.value.trim());
+    const telefone = encodeURIComponent(this.telefone.value.trim());
+    const mensagem = encodeURIComponent(this.mensagem.value.trim());
+
+    // monta o assunto e o corpo
+    const assunto = encodeURIComponent('Solicitação de Visita – My Clinical');
+    const corpo = `Olá,
+
+Gostaria de agendar uma visita à My Clinical.
+
+Nome: ${nome}
+E‑mail: ${email}
+Telefone: ${telefone}
+Mensagem: ${mensagem}
+
+Obrigado!`;
+
+    // cria o link mailto
+    const mailtoLink = `mailto:myclinical02@gmail.com?subject=${assunto}&body=${encodeURIComponent(corpo)}`;
+
+    // abre o cliente de e‑mail
+    window.location.href = mailtoLink;
+});
+</script>
+
+</body>
+</html>
