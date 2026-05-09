@@ -266,11 +266,37 @@
             .grid{
                 gap:1.5rem;
             }
-
             .grid-2{
                 grid-template-columns:1fr;
             }
+                        #servicos .grid-2{
+                grid-template-columns:repeat(4,1fr);
+            }
 
+            @media (max-width:1024px){
+             #servicos .grid-2{
+                 grid-template-columns:repeat(2,1fr);
+                 }
+            }
+
+            @media (max-width:600px){
+            #servicos .grid-2{
+                  grid-template-columns:repeat(2,1fr);
+            }
+
+            #servicos .card img{
+                 height:140px;
+                 object-fit:cover;
+             }
+
+             #servicos .content h3{
+               font-size:1rem;
+             }
+
+             #servicos .content p{
+                font-size:.85rem;
+                }
+            }
             /* CARDS */
             .card{
                 width:100%;
