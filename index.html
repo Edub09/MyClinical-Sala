@@ -166,6 +166,26 @@
             cursor:pointer;
             transition:background .3s;
         }
+          /* ---------- AGENDAR CONSULTA ---------- */
+        .agenda{
+            text-align:center;
+            margin-top:20px;
+        }
+        .agenda h1{
+            font-size:2.5rem;
+            color:var(--primary-dark);
+            margin-bottom:1px;
+        }
+        .agenda .underline{
+            width:120px;
+            height:4px;
+            background:var(--primary);
+            margin:0.2rem auto 1rem;
+        }
+        .agenda p{
+            font-size:1.1rem;
+            color:#555;
+        }
         .form button:hover{background:var(--primary-dark)}
         /* ---------- RESPONSIVE ---------- */
         @media (max-width:768px){
@@ -185,9 +205,13 @@
         </div>
         <nav>
             <a href="#sobre">Sobre</a>
+            <a>|</a>
             <a href="#servicos">Serviços</a>
+            <a>|</a>
             <a href="#profissionais">Profissionais</a>
+            <a>|</a>
             <a href="#aluguel">Aluguel de Sala</a>
+            <a>|</a>
             <a href="#contato">Contato</a>
         </nav>
     </div>
@@ -201,8 +225,8 @@
 <section id="sobre" class="section">
     <h2>Sobre a My Clinical</h2>
     <p style="max-width:800px;margin:auto;text-align:center;">
-        Na My Clinical oferecemos salas prontas para os dentistas que desejam focar apenas no atendimento
-        aos pacientes. Reduza custos com equipamentos e infraestrutura, tenha um ambiente confortável e
+        A My Clinical é dedicada a cuidar do seu sorriso com profissionais que trabalham com tratamentos individualizados, entendendo suas necessidades para oferecer um cuidado preciso. Aqui cada sorriso é único. Oferecemos salas prontas para dentistas e profissionais de saúde que desejam focar no atendimento
+        aos pacientes. Reduza custos com equipamentos e infraestrutura, tenha um ambiente confortável,
         profissional e alavanque sua carreira.
     </p>
 </section>
@@ -234,7 +258,21 @@
             <img src="https://tse1.mm.bing.net/th/id/OIP.e62dASpKG95W2Fgq1uBWiQHaEK?pid=Api&amp;P=0&amp;h=180" alt="Próteses">
             <div class="content"><h3>Próteses Dentárias</h3><p>Coroas, pontes, dentaduras e restaurações personalizadas.</p></div>
         </div>
+          <div class="card">
+            <img src="https://guiadocorpo.com/wp-content/uploads/2021/05/harmonizacao-orofacial.jpg" alt="Harmonização Orofacial">
+            <div class="content"><h3>Harmonização Orofacial</h3><p>Procedimentos estéticos que equilibram a proporção facial, rejuvenescem e realçam a beleza do sorriso.</p></div>
+        </div>
+        <div class="card">
+            <img src="https://fresh-aqua-cnp8mxatgb.edgeone.app/IMG-20260509-WA0019.jpg" alt="Odontopediatria">
+            <div class="content"><h3>Odontopediatria</h3><p>Cuidados preventivos e tratamento especializado para a saúde bucal de crianças e adolescentes.</p></div>
+        </div>
     </div>
+</section>
+
+<section class="agenda section">
+    <h1>Agende sua Consulta</h1>
+    <div class="underline"></div>
+    <p>Entre em contato com os nossos profissionais via WhatsApp ou Instagram para fazer o agendamento.</p>
 </section>
 
 <section id="profissionais" class="section">
@@ -245,7 +283,7 @@
             <img src="https://mean-plum-ijwmzqhz1u.edgeone.app/IMG-20260509-WA0009.jpg" alt="Dra Heloísa Fernandes">
             <div class="content">
                 <h3>Dra. Heloísa Fernandes</h3>
-                <p>Implantodontia • Periodontia • Harmonização Orofacial • Clínica Geral</p>
+                <p>Implantodontia • Periodontia • Harmonização Orofacial • Clínica Geral • Cirurgia Oral Menor</p>
                 <p>Instagram: <a href="https://instagram.com/dentistahelofernandes" target="_blank">@dentistahelofernandes</a></p>
                 <p>Contato: (84) 99965‑7124</p>
                 <p>CRO-RN: 5953</p>
@@ -257,7 +295,7 @@
             <img src="https://depressed-silver-exoqlzbvrx.edgeone.app/IMG-20260509-WA0005.jpg" alt="Dra Izamara Gomes">
             <div class="content">
                 <h3>Dra. Izamara Gomes</h3>
-                <p>Odontopediatria • Clínica Geral • Cirurgia Oral Menor</p>
+                <p>Odontopediatria • Clínica Geral • Cirurgia Oral Menor • Endodontia</p>
                 <p>Instagram: <a href="https://instagram.com/Dra.Izamaragomesp" target="_blank">@Dra.Izamaragomesp</a></p>
                 <p>Contato: (84) 99830‑0268</p>
                 <p>CRO-RN: 7276</p>
@@ -284,7 +322,7 @@
             <img src="https://minimal-silver-ryr3t6lhho.edgeone.app/IMG-20260509-WA0007.jpg" alt="Dr. Ildone Cavalcante">
             <div class="content">
                 <h3>Dr. Ildone Cavalcante</h3>
-                <p>Clínica Geral • Facetas • HOF • Cirurgia Oral Menor</p>
+                <p>Clínico Geral • Facetas • HOF • Cirurgia Oral Menor</p>
                 <p>Instagram: <a href="https://www.instagram.com/dr.ildone.neto?igsh=YnJmMHgxOHU1MWJy" target="_blank">@dr.ildone.neto</a></p>
                 <p>Contato: (84) 99806-9606</p>
                 <p>CRO-RN: 08521</p>
@@ -305,7 +343,16 @@
                 <p>CRO-RN: 7538</p>
             </div>
         </div>
-
+    <!-- Dra. Lídia Alves -->
+        <div class="card">
+            <img src="https://icy-chocolate-ktwitbrc7p.edgeone.app/IMG-20260509-WA0029.jpg" alt="Dra. Lídia Alves">
+            <div class="content">
+                <h3>Dra. Lídia Alves</h3>
+                <p>Cirurgia Geral</p>
+                <p>Instagram: <a href="https://www.instagram.com/dra.lidiaalves?igsh=MWh5dmxiNXB5dG1reQ==" target="_blank">@dralidiaalves</a></p>
+                <p>CRO-RN: 7279</p>
+            </div>
+        </div>
 
 
     </div>
@@ -331,6 +378,7 @@
             <input type="email" name="email" placeholder="E‑mail" required="">
             <input type="tel" name="telefone" placeholder="Telefone" required="">
             <textarea name="mensagem" rows="4" placeholder="Mensagem (ex.: data preferida para visita)" required=""></textarea>
+            <p>Obs: Após clicar em "Enviar Solicitação", você será redirecionado para o Gmail.</p>
             <button type="submit">Enviar Solicitação</button>
         </form>
     </div>
