@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<html lang="pt-BR"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Clinical – Clínica Odontológica</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet">
     <style>
         :root{
             --primary:#0a6cff;
@@ -221,7 +219,7 @@
             <div class="content"><h3>Clareamento Dental</h3><p>Procedimentos avançados para deixar seu sorriso mais branco e radiante.</p></div>
         </div>
         <div class="card">
-            <img src="https://tse2.mm.bing.net/th/id/OIP.-82U9qgsGkGVHIA1Uv4X-wHaE4?pid=Api&P=0&h=180" alt="Implantes">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.-82U9qgsGkGVHIA1Uv4X-wHaE4?pid=Api&amp;P=0&amp;h=180" alt="Implantes">
             <div class="content"><h3>Implantes Dentários</h3><p>Reposição de dentes perdidos com tecnologia de última geração.</p></div>
         </div>
         <div class="card">
@@ -233,7 +231,7 @@
             <div class="content"><h3>Endodontia</h3><p>Tratamento de canal para salvar dentes comprometidos.</p></div>
         </div>
         <div class="card">
-            <img src="https://tse1.mm.bing.net/th/id/OIP.e62dASpKG95W2Fgq1uBWiQHaEK?pid=Api&P=0&h=180" alt="Próteses">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.e62dASpKG95W2Fgq1uBWiQHaEK?pid=Api&amp;P=0&amp;h=180" alt="Próteses">
             <div class="content"><h3>Próteses Dentárias</h3><p>Coroas, pontes, dentaduras e restaurações personalizadas.</p></div>
         </div>
     </div>
@@ -329,10 +327,10 @@
     <div class="section" id="form-aluguel">
         <h2 style="margin-top:2rem;">Solicite sua Visita</h2>
         <form class="form" id="visitaForm">
-            <input type="text" name="nome" placeholder="Seu nome" required>
-            <input type="email" name="email" placeholder="E‑mail" required>
-            <input type="tel" name="telefone" placeholder="Telefone" required>
-            <textarea name="mensagem" rows="4" placeholder="Mensagem (ex.: data preferida para visita)" required></textarea>
+            <input type="text" name="nome" placeholder="Seu nome" required="">
+            <input type="email" name="email" placeholder="E‑mail" required="">
+            <input type="tel" name="telefone" placeholder="Telefone" required="">
+            <textarea name="mensagem" rows="4" placeholder="Mensagem (ex.: data preferida para visita)" required=""></textarea>
             <button type="submit">Enviar Solicitação</button>
         </form>
     </div>
@@ -348,14 +346,14 @@
                 <p>Telefone: (84) 98674‑0480</p>
                 <p>E‑mail: <a href="mailto:myclinical02@gmail.com">myclinical02@gmail.com</a></p>
                 <p>Instagram: <a href="https://www.instagram.com/myclinical_?igsh=MXJxNTBpMGJsdzAwOQ==" target="_blank">@myclinical_</a></p>
-                <p>Whatsapp: <a href="https://wa.me/5584986740480" target="_blank">whatsapp@myclinical.com</a></p>
+                <p>Whatsapp: <a href="https://wa.me/5584986740480" target="_blank">(84) 98674-0480</a></p>
             </div>
         </div>
-        <div class = "card">
+        <div class="card">
             <img src="https://static.vecteezy.com/system/resources/previews/001/265/731/original/map-with-location-pin-vector.jpg" alt="Endereço">
             <div class="content">
-                <h3>My Clinical Odontologia & Saúde</h3>
-                <p>Endereço: Rua Engenheiro Carlos Drumaresque, 6 – Alto de São Manoel</p>
+                <h3>My Clinical Odontologia &amp; Saúde</h3>
+                <p>Endereço: Rua Engenheiro Carlos Drumaresque, 6 – Alto de São Manoel, Mossoró/RN</p>
                 <p>Próximo ao Restaurante Acapulcos</p>
             </div>
         </div>
@@ -367,40 +365,43 @@
 </footer>
 
 <script>
-/**
- * Envia o formulário de solicitação de visita via "mailto".
- * Abre o cliente de e‑mail do usuário já preenchido com
- * destinatário, assunto e corpo da mensagem.
- */
 document.getElementById('visitaForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // impede o envio tradicional
+    e.preventDefault();
 
-    // coleta os valores
-    const nome = encodeURIComponent(this.nome.value.trim());
-    const email = encodeURIComponent(this.email.value.trim());
-    const telefone = encodeURIComponent(this.telefone.value.trim());
-    const mensagem = encodeURIComponent(this.mensagem.value.trim());
+    const form = e.target;
 
-    // monta o assunto e o corpo
+    const nome = form.nome.value.trim();
+    const email = form.email.value.trim();
+    const telefone = form.telefone.value.trim();
+    const mensagem = form.mensagem.value.trim();
+
     const assunto = encodeURIComponent('Solicitação de Visita – My Clinical');
-    const corpo = `Olá,
 
-Gostaria de agendar uma visita à My Clinical.
+    const corpo = encodeURIComponent(
+`Olá,
+
+Gostaria de solicitar uma visita à My Clinical.
 
 Nome: ${nome}
-E‑mail: ${email}
+E-mail: ${email}
 Telefone: ${telefone}
-Mensagem: ${mensagem}
 
-Obrigado!`;
+Mensagem:
+${mensagem}
 
-    // cria o link mailto
-    const mailtoLink = `mailto:myclinical02@gmail.com?subject=${assunto}&body=${encodeURIComponent(corpo)}`;
+Obrigado!`
+    );
 
-    // abre o cliente de e‑mail
-    window.location.href = mailtoLink;
+    // Abre o Gmail já preenchido
+    const gmailURL =
+`https://mail.google.com/mail/?view=cm&fs=1&to=myclinical02@gmail.com&su=${assunto}&body=${corpo}`;
+
+    window.open(gmailURL, '_blank');
+
+    // Redireciona após alguns segundos
+    setTimeout(() => {
+        window.location.href =
+        'https://edub09.github.io/MyClinical-Sala/obrigado.html';
+    }, 2000);
 });
 </script>
-
-</body>
-</html>
